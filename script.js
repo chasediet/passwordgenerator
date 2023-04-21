@@ -84,7 +84,14 @@ function generatePassword() {
   return generatedPassword;
 }
 // Function to write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
 // Event listener to generate password on button click
+document.querySelector("#generate").addEventListener("click", writePassword);
 
 // Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
